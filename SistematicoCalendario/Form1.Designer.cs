@@ -50,6 +50,7 @@ namespace SistematicoCalendario
 			this.btnCrear.TabIndex = 1;
 			this.btnCrear.Text = "Crear";
 			this.btnCrear.UseVisualStyleBackColor = true;
+			this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
 			// 
 			// Form1
 			// 

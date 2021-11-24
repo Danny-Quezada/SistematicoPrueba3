@@ -16,5 +16,10 @@ namespace SistematicoCalendario
 		{
 			InitializeComponent();
 		}
+
+		private void FrmCrearCalendario_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

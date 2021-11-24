@@ -26,7 +26,7 @@ namespace SistematicoCalendario
 			builder.RegisterType<CalendarioListRepository>().As<ICalendarioRepository>();
 			builder.RegisterType<CalendarioServices>().As<ICalendarioService>();
 			var container = builder.Build();
-			Application.Run(new Form1(container.Resolve<IEmpleadoService>()));
+			Application.Run(new Form1(container.Resolve<ICalendarioService>()));
 		}
 	}
 }
