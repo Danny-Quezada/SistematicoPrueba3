@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace SistematicoCalendario
 {
 	public partial class Form1 : Form
 	{
-		public Form1()
+		private ICalendarioService Calendario;
+		public Form1(ICalendarioService calendario)
 		{
+			this.Calendario = calendario;
 			InitializeComponent();
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

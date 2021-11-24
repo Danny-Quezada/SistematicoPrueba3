@@ -11,5 +11,6 @@ namespace Domain.Interfaces
 
 		void Create(T t);
 		int GetLastId();
+		\
 	}
 }

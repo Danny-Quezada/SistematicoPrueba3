@@ -26,7 +26,7 @@ namespace Infraestructure
 			datos.Add(t);
 		}
 
-	
+
 		public int GetLastId()
 		{
 			try

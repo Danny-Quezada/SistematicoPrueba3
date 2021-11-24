@@ -10,14 +10,32 @@ namespace Infraestructure
 {
 	public class CalendarioListRepository : BaseRepository<Calendario>, ICalendarioRepository
 	{
-		public void Delete(Calendario calendario)
+		private List<Calendario> Calendarios;
+		private List<Calendario> Pagados;
+		public CalendarioListRepository()
 		{
-			throw new NotImplementedException();
+			Calendarios = new List<Calendario>();
+			Pagados = new List<Calendario>();
+		}
+		
+
+		public ICollection<Calendario> FindAll(int tipo)
+		{
+			if (tipo == 1)
+			{
+				return Calendarios;
+			}
+			else if (tipo == 2)
+			{
+				return Pagados;
+			}
+			return null;
 		}
 
 		public void QuitarLista(Calendario calendario)
 		{
-			throw new NotImplementedException();
+			Calendarios.Remove(calendario);
+			Pagados.Add(calendario);
 		}
 	}
 }

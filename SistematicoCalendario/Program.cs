@@ -1,4 +1,9 @@
-﻿using System;
+﻿using AppCore.Interfaces;
+using AppCore.Services;
+using Autofac;
+using Domain.Interfaces;
+using Infraestructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +21,12 @@ namespace SistematicoCalendario
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			var builder = new ContainerBuilder();
+
+			builder.RegisterType<CalendarioListRepository>().As<ICalendarioRepository>();
+			builder.RegisterType<CalendarioServices>().As<ICalendarioService>();
+			var container = builder.Build();
+			Application.Run(new Form1(container.Resolve<IEmpleadoService>()));
 		}
 	}
 }

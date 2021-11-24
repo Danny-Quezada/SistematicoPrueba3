@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppCore
+namespace AppCore.Interfaces
 {
-    public class Class1
-    {
-    }
+	public interface IServices<T>
+	{
+
+		void Create(T t);
+		int GetLastId();
+
+	}
 }

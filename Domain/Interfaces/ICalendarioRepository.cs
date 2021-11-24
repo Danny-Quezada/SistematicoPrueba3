@@ -8,7 +8,8 @@ namespace Domain.Interfaces
 {
 	public interface ICalendarioRepository: IModel<Calendario>
 	{
-		void Delete(Calendario calendario);
+		
 		void QuitarLista(Calendario calendario);
+		 ICollection<Calendario> FindAll(int tipo);
 	}
 }
